@@ -1,0 +1,89 @@
+<h1> Here I need to make all the ikigai componets appear</h1>
+
+<div class="block">
+    <input type="text" placeholder="Text can be entered here">
+    
+    <input type="checkbox">
+    
+    <input type="radio">
+
+    <select>
+        <option>a</option>
+        <option>b</option>
+        <option>c</option>
+    </select>
+
+    <!-- Use proper class for styling -->
+    <form>
+
+    </form>
+    <textarea class="form-control">Integrating ikigai input components and feeding and testing input</textarea>
+
+    <button>Hit me!</button>
+
+    <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time">
+    <owl-date-time #dt1></owl-date-time>
+
+    <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="Date Time button" style="background: none; cursor: pointer;">
+    <owl-date-time #dt2></owl-date-time>
+
+    <!-- Check for buttons as well for time picker -->
+
+    <!-- Try Modals, alerts for error and success messages -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary mr-1" data-toggle="modal" (click)="myModal.show()">
+    Launch demo modal
+    </button>
+
+    <!-- Check the compatibility with tinyMCE -->
+    <!-- Check for existing features availability -->
+    <!-- http://webapp.dailyrounds.org:8080/a/marrow/mcq/50261/edit?course_id=1 -->
+    <!-- Image upload try it out, how client is interacting with backend -->
+    <!-- http://webapp.dailyrounds.org:8080/a/marrow/coupon/YMTRST/edit?course_id=1 -->
+
+    <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+
+    <h1>TinyMCE 5 Angular Demo</h1>
+    <editor
+    [init]="{
+        height: 500,
+        menubar: false,
+        plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+        'undo redo | formatselect | bold italic backcolor | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | removeformat | help | image',
+        apiKey: 'ro0m884wlv21f6uyy58s3cwuwu8a5q3v6959zp00dwsc93wy',
+        file_picker_types: 'file image media'
+    }"
+    ></editor>
+
+</div>
+
+
+
+    <!-- Check for license -->
+
+<div bsModal #myModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" (click)="myModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <p>One fine body&hellip;</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="myModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
